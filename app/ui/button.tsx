@@ -1,8 +1,8 @@
 import clsx from "clsx";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 	children: React.ReactNode;
-}
+};
 
 export const Button = ({ children, className, ...rest }: ButtonProps) => {
 	return (

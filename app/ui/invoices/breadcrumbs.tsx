@@ -2,11 +2,11 @@ import { clsx } from "clsx";
 import Link from "next/link";
 import { lusitana } from "../fonts";
 
-interface Breadcrumb {
+type Breadcrumb = {
 	label: string;
 	href: string;
 	active?: boolean;
-}
+};
 
 const Breadcrumbs = ({ breadcrumbs }: { breadcrumbs: Breadcrumb[] }) => {
 	return (
