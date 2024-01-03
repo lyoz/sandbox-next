@@ -7,7 +7,7 @@ import {
 import { Button } from "./button";
 import { lusitana } from "./fonts";
 
-export default function LoginForm() {
+const LoginForm = () => {
 	return (
 		<form className="space-y-3">
 			<div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
@@ -62,12 +62,14 @@ export default function LoginForm() {
 			</div>
 		</form>
 	);
-}
+};
 
-function LoginButton() {
+export default LoginForm;
+
+const LoginButton = () => {
 	return (
 		<Button className="mt-4 w-full">
 			Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
 		</Button>
 	);
-}
+};

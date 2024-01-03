@@ -4,7 +4,7 @@ import Link from "next/link";
 import AcmeLogo from "./ui/acme-logo";
 import { lusitana } from "./ui/fonts";
 
-export default function Page() {
+const Page = () => {
 	return (
 		<main className="flex min-h-screen flex-col p-6">
 			<div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
@@ -47,4 +47,6 @@ export default function Page() {
 			</div>
 		</main>
 	);
-}
+};
+
+export default Page;

@@ -10,13 +10,13 @@ import Link from "next/link";
 import { CustomerField, InvoiceForm } from "../../lib/definitions";
 import { Button } from "../button";
 
-export default function EditInvoiceForm({
+const EditInvoiceForm = ({
 	invoice,
 	customers,
 }: {
 	invoice: InvoiceForm;
 	customers: CustomerField[];
-}) {
+}) => {
 	return (
 		<form>
 			<div className="rounded-md bg-gray-50 p-4 md:p-6">
@@ -120,4 +120,6 @@ export default function EditInvoiceForm({
 			</div>
 		</form>
 	);
-}
+};
+
+export default EditInvoiceForm;

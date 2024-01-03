@@ -4,13 +4,13 @@ import { formatCurrency, formatDateToLocal } from "../../lib/utils";
 import { DeleteInvoice, UpdateInvoice } from "./buttons";
 import InvoiceStatus from "./status";
 
-export default async function InvoicesTable({
+const InvoicesTable = async ({
 	query,
 	currentPage,
 }: {
 	query: string;
 	currentPage: number;
-}) {
+}) => {
 	const invoices = await fetchFilteredInvoices(query, currentPage);
 
 	return (
@@ -121,4 +121,6 @@ export default async function InvoicesTable({
 			</div>
 		</div>
 	);
-}
+};
+
+export default InvoicesTable;

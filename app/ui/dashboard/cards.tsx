@@ -13,7 +13,7 @@ const iconMap = {
 	invoices: InboxIcon,
 };
 
-export default async function CardWrapper() {
+const CardWrapper = async () => {
 	return (
 		<>
 			{/* NOTE: comment in this code when you get to this point in the course */}
@@ -28,9 +28,11 @@ export default async function CardWrapper() {
 			/> */}
 		</>
 	);
-}
+};
 
-export function Card({
+export default CardWrapper;
+
+export const Card = ({
 	title,
 	value,
 	type,
@@ -38,7 +40,7 @@ export function Card({
 	title: string;
 	value: number | string;
 	type: "invoices" | "customers" | "pending" | "collected";
-}) {
+}) => {
 	const Icon = iconMap[type];
 
 	return (
@@ -57,4 +59,4 @@ export function Card({
 			</p>
 		</div>
 	);
-}
+};

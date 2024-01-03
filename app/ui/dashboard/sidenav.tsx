@@ -3,7 +3,7 @@ import Link from "next/link";
 import AcmeLogo from "../acme-logo";
 import NavLinks from "./nav-links";
 
-export default function SideNav() {
+const SideNav = () => {
 	return (
 		<div className="flex h-full flex-col px-3 py-4 md:px-2">
 			<Link
@@ -26,4 +26,6 @@ export default function SideNav() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default SideNav;
