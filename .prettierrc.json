@@ -1,0 +1,5 @@
+{
+	"useTabs": true,
+	"experimentalTernaries": true,
+	"plugins": ["prettier-plugin-tailwindcss"]
+}
