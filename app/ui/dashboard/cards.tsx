@@ -13,12 +13,11 @@ const iconMap = {
 	invoices: InboxIcon,
 };
 
-const CardWrapper = async () => {
-	return (
-		<>
-			{/* NOTE: comment in this code when you get to this point in the course */}
+const CardWrapper = async () => (
+	<>
+		{/* NOTE: comment in this code when you get to this point in the course */}
 
-			{/* <Card title="Collected" value={totalPaidInvoices} type="collected" />
+		{/* <Card title="Collected" value={totalPaidInvoices} type="collected" />
 			<Card title="Pending" value={totalPendingInvoices} type="pending" />
 			<Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
 			<Card
@@ -26,9 +25,8 @@ const CardWrapper = async () => {
 				value={numberOfCustomers}
 				type="customers"
 			/> */}
-		</>
-	);
-};
+	</>
+);
 
 export default CardWrapper;
 
