@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import { unstable_noStore as noStore } from "next/cache";
 import {
 	CustomerField,
 	CustomersTableType,
@@ -13,6 +14,7 @@ import { formatCurrency } from "./utils";
 export const fetchRevenue = async () => {
 	// Add noStore() here prevent the response from being cached.
 	// This is equivalent to in fetch(..., {cache: 'no-store'}).
+	noStore();
 
 	try {
 		// Artificially delay a response for demo purposes.
@@ -33,6 +35,8 @@ export const fetchRevenue = async () => {
 };
 
 export const fetchLatestInvoices = async () => {
+	noStore();
+
 	try {
 		const data = await sql<LatestInvoiceRaw>`
 			SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
@@ -54,6 +58,8 @@ export const fetchLatestInvoices = async () => {
 };
 
 export const fetchCardData = async () => {
+	noStore();
+
 	try {
 		// You can probably combine these into a single SQL query
 		// However, we are intentionally splitting them to demonstrate
@@ -95,6 +101,7 @@ export const fetchFilteredInvoices = async (
 	query: string,
 	currentPage: number,
 ) => {
+	noStore();
 	const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
 	try {
@@ -127,6 +134,8 @@ export const fetchFilteredInvoices = async (
 };
 
 export const fetchInvoicesPages = async (query: string) => {
+	noStore();
+
 	try {
 		const count = await sql`
 			SELECT COUNT(*)
@@ -149,6 +158,8 @@ export const fetchInvoicesPages = async (query: string) => {
 };
 
 export const fetchInvoiceById = async (id: string) => {
+	noStore();
+
 	try {
 		const data = await sql<InvoiceForm>`
 			SELECT
@@ -174,6 +185,8 @@ export const fetchInvoiceById = async (id: string) => {
 };
 
 export const fetchCustomers = async () => {
+	noStore();
+
 	try {
 		const data = await sql<CustomerField>`
 			SELECT id, name
@@ -190,6 +203,8 @@ export const fetchCustomers = async () => {
 };
 
 export const fetchFilteredCustomers = async (query: string) => {
+	noStore();
+
 	try {
 		const data = await sql<CustomersTableType>`
 			SELECT
@@ -223,6 +238,8 @@ export const fetchFilteredCustomers = async (query: string) => {
 };
 
 export const getUser = async (email: string) => {
+	noStore();
+
 	try {
 		const user = await sql`SELECT * FROM users WHERE email=${email}`;
 		return user.rows[0] as User;
